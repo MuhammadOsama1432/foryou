@@ -14,7 +14,7 @@
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      backdrop-filter: blur(2px);
+      backdrop-filter: blur(5px);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -23,14 +23,14 @@
     }
 
     .container {
-      background: rgba(255, 240, 245, 0.95);
+      background: rgba(255, 240, 245, 0.85);
       padding: 50px 40px;
-      border-radius: 22px;
+      border-radius: 30px;
       text-align: center;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
       max-width: 500px;
       width: 90%;
-      animation: fadeIn 1.5s ease;
+      animation: fadeIn 2s ease-out;
     }
 
     @keyframes fadeIn {
@@ -40,89 +40,75 @@
 
     h1 {
       font-family: 'Great Vibes', cursive;
-      font-size: 3.2rem;
+      font-size: 3.5rem;
       color: #c2185b;
-      margin-bottom: 10px;
-      animation: bounceIn 2s ease-out;
+      margin-bottom: 15px;
+      animation: fadeInHeading 2s ease-out;
     }
 
-    @keyframes bounceIn {
-      0% { transform: translateY(-100px); opacity: 0; }
-      60% { transform: translateY(30px); opacity: 1; }
-      100% { transform: translateY(0); }
+    @keyframes fadeInHeading {
+      from { opacity: 0; transform: translateY(-50px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .subtext {
-      font-size: 1.4rem;
+      font-size: 1.5rem;
       font-weight: 600;
       color: #ff4081;
-      margin-bottom: 25px;
-      animation: fadeInSubText 2s ease;
+      margin-bottom: 30px;
+      opacity: 0;
+      animation: fadeInText 2.5s ease-in-out forwards;
     }
 
-    @keyframes fadeInSubText {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    @keyframes fadeInText {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
 
     p {
       font-size: 1.2rem;
-      color: #333;
-      line-height: 1.7;
+      color: #444;
+      line-height: 1.8;
       margin-bottom: 25px;
-      animation: fadeInText 2s ease-in-out;
-    }
-
-    @keyframes fadeInText {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+      opacity: 0;
+      animation: fadeInText 2s ease-in-out forwards;
     }
 
     .emoji {
       font-size: 2.4rem;
-      margin-bottom: 25px;
-      animation: emojiFloat 3s ease-in-out infinite;
+      margin-bottom: 20px;
+      opacity: 0;
+      animation: emojiFloat 3s ease-in-out infinite, fadeInText 3s ease-in-out forwards;
     }
 
     @keyframes emojiFloat {
-      0% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-      100% { transform: translateY(0); }
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
     }
 
     .btn a {
       display: inline-block;
-      background-color: #25D366;
+      background: linear-gradient(135deg, #ff80ab, #ff4081);
       color: #fff;
-      padding: 12px 28px;
-      border-radius: 14px;
+      padding: 14px 28px;
+      border-radius: 30px;
       font-weight: 600;
       text-decoration: none;
       font-size: 1rem;
-      transition: 0.3s;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-      position: relative;
+      transition: 0.3s ease;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+      animation: fadeInBtn 2s ease-out;
+    }
+
+    @keyframes fadeInBtn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .btn a:hover {
-      background-color: #1ebd59;
-      transform: scale(1.05);
-    }
-
-    .btn a::after {
-      content: '💬';
-      position: absolute;
-      top: 50%;
-      right: -30px;
-      transform: translateY(-50%);
-      font-size: 1.4rem;
-      opacity: 0;
-      animation: iconSlide 1s ease-in-out forwards;
-    }
-
-    @keyframes iconSlide {
-      0% { opacity: 0; transform: translateY(-50%) translateX(10px); }
-      100% { opacity: 1; transform: translateY(-50%) translateX(0); }
+      background: linear-gradient(135deg, #ff4f91, #e91e63);
+      transform: translateY(-5px);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
     }
 
     .floating-hearts {
@@ -130,18 +116,18 @@
       top: 0;
       left: 50%;
       transform: translateX(-50%);
-      animation: hearts 4s ease-in-out infinite;
+      animation: hearts 6s ease-in-out infinite;
     }
 
     @keyframes hearts {
       0% { transform: translateY(0) scale(1); }
-      50% { transform: translateY(-40px) scale(1.2); }
+      50% { transform: translateY(-60px) scale(1.1); }
       100% { transform: translateY(0) scale(1); }
     }
 
     .floating-hearts img {
-      width: 40px;
-      margin: 0 5px;
+      width: 45px;
+      margin: 0 10px;
       animation: heartFloat 3s infinite ease-in-out;
     }
 
