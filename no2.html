@@ -1,24 +1,20 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ur">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aamna🥺</title>
+  <title>Amna ❤️</title>
   <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
+    * { box-sizing: border-box; }
     body {
       margin: 0;
       padding: 0;
       font-family: 'Poppins', sans-serif;
       background: linear-gradient(
-          rgba(255, 192, 203, 0.25),
-          rgba(255, 192, 203, 0.4)
-        ),
-        url('https://i.pinimg.com/originals/5e/d9/4f/5ed94f8d62e0a62f2a8973f5fc74665b.jpg') no-repeat center center;
+        rgba(255, 182, 193, 0.25),
+        rgba(255, 192, 203, 0.5)
+      ), url('https://i.pinimg.com/originals/5e/d9/4f/5ed94f8d62e0a62f2a8973f5fc74665b.jpg') no-repeat center center;
       background-size: cover;
       backdrop-filter: blur(3px);
       display: flex;
@@ -29,34 +25,58 @@
     }
 
     .container {
-      background: rgba(255, 255, 255, 0.95);
+      background: rgba(255, 255, 255, 0.96);
       padding: 60px 50px;
-      border-radius: 28px;
+      border-radius: 30px;
       text-align: center;
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
-      max-width: 600px;
+      box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+      max-width: 620px;
       width: 100%;
+      animation: fadeIn 1.2s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .emoji {
-      font-size: 2.6rem;
-      margin: 40px 0 25px;
+      font-size: 2.8rem;
+      margin: 35px 0 25px;
+      animation: pulse 2s infinite;
     }
 
-    .last-hope {
-      font-size: 1.25rem;
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+
+    .please {
+      font-size: 1.3rem;
       color: #444;
       font-style: italic;
       margin-bottom: 25px;
       line-height: 1.9;
     }
 
+    .please span {
+      background: linear-gradient(to right, #ec407a, #ab47bc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 600;
+    }
+
     .confidence-line {
-      font-size: 1.2rem;
+      font-size: 1.25rem;
       color: #b4004e;
       font-weight: 600;
       margin-bottom: 40px;
       line-height: 1.9;
+    }
+
+    .confidence-line span {
+      color: #ff4081;
+      font-weight: bold;
     }
 
     .btn {
@@ -69,7 +89,7 @@
 
     .btn a {
       text-decoration: none;
-      background-color: #b71c1c;
+      background-color: #e91e63;
       color: white;
       padding: 14px 32px;
       border-radius: 16px;
@@ -80,28 +100,30 @@
     }
 
     .btn a:hover {
-      background-color: #d50000;
+      background-color: #d81b60;
+      transform: scale(1.05);
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="emoji">💔🥺✨</div>
+    <div class="emoji">🌸🥺💘</div>
 
-    <div class="Please">
-      Mujhe pata hai aap maan hi jaengi...<br />
-      Mujhe kisi confession ki zarurat nahi,<br />
-      aapki aankhein sab keh deti hain. Sab kuch. ✨
+    <div class="please">
+      Tumhari khamoshi bhi mujhe sab kuch bata deti hai...<br />
+      Shayad lafzon ki zarurat hi nahi rahi ab. <br />
+      <span>Bas ek muskurahat</span> aur main jeet gaya 💖
     </div>
 
     <div class="confidence-line">
-      Aur haan... mujhe yakeen hai, aap meri hi hain. Always.<br />
-      Mere siwa aapko koi nahi le jaa sakta. Aapki "na" mein bhi "haan" chhupi hai 😌
+      Mujhe poora yakeen hai...<br />
+      Tum ho <span>sirf meri</span>. Tumhari "no" bhi pyaar jaisi lagti hai 😌<br />
+      Aur main? Tumhara, har janam mein 💫
     </div>
 
     <div class="btn">
-      <a href="index.html">Wait a min 🥺</a>
-      <a href="yes.html">Theek hai, maan gayi 😌</a>
+      <a href="index.html">Zara ruk jao 😅</a>
+      <a href="yes.html">Chalo maan gayi 💕</a>
     </div>
   </div>
 </body>
