@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ur">
 <head>
   <meta charset="UTF-8" />
@@ -6,15 +6,18 @@
   <title>Phir Say?! 😑</title>
   <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    * { box-sizing: border-box; }
+
     body {
       margin: 0;
       padding: 0;
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #ffd6e0, #ffe4f2);
+      background: linear-gradient(145deg, #ffe4f2, #ffd6e0);
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
+      overflow: hidden;
     }
 
     .container {
@@ -25,17 +28,31 @@
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
       max-width: 520px;
       width: 90%;
+      position: relative;
+      animation: fadeIn 1.2s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     h1 {
       font-family: 'Indie Flower', cursive;
-      font-size: 2.7rem;
+      font-size: 2.8rem;
       color: #d90429;
       margin-bottom: 20px;
+      animation: shake 1.5s infinite ease-in-out;
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: rotate(0deg); }
+      25% { transform: rotate(-2deg); }
+      75% { transform: rotate(2deg); }
     }
 
     .subtext {
-      font-size: 1.35rem;
+      font-size: 1.4rem;
       font-weight: 600;
       color: #e60073;
       margin-bottom: 15px;
@@ -49,7 +66,7 @@
     }
 
     .emotional-line {
-      font-size: 1.15rem;
+      font-size: 1.1rem;
       font-weight: 500;
       color: #b4004e;
       font-style: italic;
@@ -57,8 +74,14 @@
     }
 
     .emoji {
-      font-size: 2.6rem;
-      margin: 25px 0;
+      font-size: 2.7rem;
+      margin: 20px 0;
+      animation: bounce 1.8s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
     }
 
     .btn {
@@ -83,23 +106,73 @@
 
     .btn a:hover {
       background-color: #ff3366;
+      transform: scale(1.05);
+    }
+
+    /* Floating hearts */
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: #ff6fa7;
+      border-radius: 50%;
+      transform: rotate(45deg);
+      animation: floatUp 6s linear infinite;
+      opacity: 0.4;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: #ff6fa7;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      top: 0;
+      left: -10px;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(100vh) rotate(45deg); opacity: 0; }
+      50% { opacity: 0.6; }
+      100% { transform: translateY(-10vh) rotate(45deg); opacity: 0; }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Phir se NA? 😑</h1>
+    <h1>Phir se Nahi?! 😑</h1>
 
-    <div class="subtext">Man ja na... kitna bhao khaogi? 😩</div>
-    <div class="clingy-line">Cutu man ja... ap janti hai mai ap ka pecha kabhi nahi chorunga 😌</div>
-    <div class="emotional-line">Bas ek baar maan jao na... Tumhe andaza bhi nahi ke tum mere liye kya ho. Tumhare bina sab adhoora lagta hai 🥺</div>
+    <div class="subtext"><span style="color:#ff4081;">Zid</span> karna mera hobby hai 💁‍♂️</div>
+    <div class="clingy-line">Tum "no" keh do, par <span style="color:#f50057;">main haan sunn'ne aaya hoon</span> 💌</div>
+    <div class="emotional-line">Dil keh raha hai... tu haan kar de toh baat ban jaaye 💕</div>
 
-    <div class="emoji">💗😤✨</div>
+    <div class="emoji">😢💘😜</div>
 
     <div class="btn">
-      <a href="yes.html">Thik hai maan leti hoon 🙄</a>
-      <a href="no2.html">No 😂</a>
+      <a href="yes.html">Uff okay fine 😤</a>
+      <a href="no2.html">Still no 😂</a>
     </div>
   </div>
+
+  <!-- Floating hearts -->
+  <script>
+    for (let i = 0; i < 15; i++) {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDelay = Math.random() * 4 + 's';
+      document.body.appendChild(heart);
+    }
+  </script>
 </body>
 </html>
